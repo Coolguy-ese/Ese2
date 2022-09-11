@@ -1,0 +1,145 @@
+<!doctype>
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+               .all{
+                height: 122%;
+                width: 50%;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: cambria;
+                text-align: center;
+                background:linear-gradient(Blue, rgb(11, 187, 114), rgb(206, 86, 86));
+                margin-left: 25%;
+               }
+               select{
+                width: 500px;
+                height: 50px;
+                font-weight: bold;
+                font-size: 30px;
+                font-family: agency fb;
+                border-radius: 20px;
+               }
+               .pr{
+                width: 500px;
+                height: 50px;
+                background-color: white;
+                border-radius: 20px;
+                font-family: agency fb;
+                font-size: 30px;
+               margin: auto;
+               font-weight: bold;
+               }
+               input{
+                width: 500px;
+                height: 50px;
+                background-color: white;
+                border-radius: 20px;
+                font-family: agency fb;
+                font-size: 23px;
+                font-weight: bold;
+               }
+                #pizza{
+                    height: 200px;
+                    width:300px;
+                    margin-left: 30%;
+                    margin-top: 10px;
+                    border-radius: 30px;
+                    box-shadow: 4px 4px black;
+                }
+                #burger{
+                    height: 200px;
+                    width:300px;
+                    margin-left: 30%;
+                    margin-top: 10px;
+                    border-radius: 30px;
+                    box-shadow: 4px 4px black;
+                }
+                #jam{
+                    height: 200px;
+                    width:300px;
+                    margin-left: 30%;
+                    margin-top: 10px;
+                    border-radius: 30px;
+                    box-shadow: 4px 4px black;
+                }
+               
+        </style>
+  </head>
+<body>
+    <div class="all">
+        <a style="font-size:40px; font-weight: BOLD;">Point Of Sales(P.O.S.)</a><br><br><br>
+        <a style="font-family: Franklin Gothic Medium; font-size: 35px;">Menu</a><br>
+        Food-available: <br><select id="food">
+            <option>PIZZA</option>
+            <option>PAN-CAKE</option>
+            <option>JAM-PIE</option>
+            <option>BURGER</option>
+            <option>EGG-CURSTARD</option>
+        </select> <br>
+        
+        <img src="pizza.jpg" id="pizza"><img src="burger1.jpg" id="burger"><img src="strawjampie.jpg" id="jam">
+        <br>
+
+        <a style="font-family: Franklin Gothic Medium; font-size: 35px;">Price</a><br>
+        Cost of food:<div class="pr" id="price"></div><br>
+         <button onclick="document.getElementById('als').style.display='block';me()">
+            Proceed
+        </button><br>
+         
+        <div id="als">
+        <a style="font-family: Franklin Gothic Medium; font-size: 35px;">Quantity</a><br>
+        Amount of Food: <br><input type="number" placeholder="Input the quantity of food" id="quantity" ><br><br>
+         <button onclick="mea()">ACCEPT</button><br>
+        <a style="font-family: Franklin Gothic Medium; font-size: 40px;">TOTAL COST</a><br>
+        Cost of food:<div class="pr" id="total"></div><br><br>
+        </div>
+           
+    </div>
+    <script>
+           document.getElementById('als').style.display='none';
+           document.getElementById('jam').style.display='none';
+           document.getElementById('pizza').style.display='none';
+           document.getElementById('burger').style.display='none';
+          function me(){
+            var food= document.getElementById('food').value;
+            if (food=='PIZZA'){
+                document.getElementById('price').innerHTML=546;
+                document.getElementById('pizza').style.display='block';
+                document.getElementById('jam').style.display='none';
+                document.getElementById('burger').style.display='none';
+            }
+
+            else if(food=='BURGER'){
+                document.getElementById('price').innerHTML=114;
+                document.getElementById('burger').style.display='block';
+                document.getElementById('jam').style.display='none';
+                document.getElementById('pizza').style.display='none';
+            }
+
+            else if(food=='JAM-PIE'){
+                document.getElementById('price').innerHTML=134;
+                document.getElementById('jam').style.display='block';
+                document.getElementById('burger').style.display='none';
+                document.getElementById('pizza').style.display='none';
+            }
+
+            else if(food=='PAN-CAKE'){
+                document.getElementById('price').innerHTML=342;
+            }
+
+            else if(food=='EGG-CURSTARD'){
+                document.getElementById('price').innerHTML=100;
+            }
+          }
+
+          function mea(){
+            var alw = document.getElementById('price').innerText;
+            var tym = document.getElementById('quantity').value;
+            var haha = parseInt(tym) * parseInt(alw);
+            document.getElementById('total').innerHTML='The total cost of food is'+' '+'$'+ haha; 
+          }
+    </script>
+</body>
+</html>
